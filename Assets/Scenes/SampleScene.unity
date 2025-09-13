@@ -790,7 +790,7 @@ RectTransform:
   m_Father: {fileID: 1601654337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.325, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -864,8 +864,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1711933959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.325, y: 0}
+  m_AnchorMax: {x: 0.325, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -999,11 +999,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c1840c705692c44ba80b13dacea8bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decibelSlider: {fileID: 1583143140}
-  recordingIcon: {fileID: 1237840599}
-  volumeThreshold: 0.2
-  recordDuration: 5
-  sliderSmoothing: 8
+  statusIcon: {fileID: 1237840599}
+  idleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  listenColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  talkColor: {r: 0, g: 1, b: 0, a: 1}
   avatarAnimator: {fileID: 1944656299}
   audioSource: {fileID: 1005507549}
   serverAddress: tcp://localhost:5555
@@ -1210,7 +1209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1583143139
 RectTransform:
   m_ObjectHideFlags: 0
