@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f5e7ba0a1d8754795942cd24695fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameterName: ListenIndex
+  parameter: 1
   maxCount: 3
 --- !u!1107 &-4727597280920124267
 AnimatorStateMachine:
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f5e7ba0a1d8754795942cd24695fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameterName: ListenIndex
+  parameter: 0
   maxCount: 4
 --- !u!1101 &-2627807711294206513
 AnimatorStateTransition:
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f5e7ba0a1d8754795942cd24695fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameterName: ListenIndex
+  parameter: 2
   maxCount: 5
 --- !u!1109 &2964689177868779221
 AnimatorTransition:

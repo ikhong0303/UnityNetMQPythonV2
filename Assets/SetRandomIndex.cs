@@ -1,19 +1,32 @@
-using UnityEngine;
+ï»¿using UnityEngine;
+
+// --- ğŸ‘‡ ì—¬ê¸°ì— ë“œë¡­ë‹¤ìš´ ë©”ë‰´ì— í‘œì‹œë  í•­ëª©ë“¤ì„ ì •ì˜í•©ë‹ˆë‹¤ ---
+public enum AnimationParameterType
+{
+    IdleIndex,
+    ListenIndex,
+    TalkIndex
+}
 
 public class SetRandomIndex : StateMachineBehaviour
 {
-    // ÀÎ½ºÆåÅÍ¿¡¼­ ¼³Á¤ÇÒ º¯¼öµé
-    public string parameterName = "ListenIndex"; // ¿ì¸®°¡ ¸¸µç Int ÆÄ¶ó¹ÌÅÍ ÀÌ¸§
-    public int maxCount = 3; // ¾Ö´Ï¸ŞÀÌ¼Ç °³¼ö (ListenÀº 3°³)
+    // --- ğŸ‘‡ string ëŒ€ì‹  enum íƒ€ì…ì„ ì‚¬ìš©í•©ë‹ˆë‹¤ ---
+    [Tooltip("ëœë¤ ê°’ì„ ì„¤ì •í•  Int íŒŒë¼ë¯¸í„°ë¥¼ ì„ íƒí•˜ì„¸ìš”.")]
+    public AnimationParameterType parameter = AnimationParameterType.ListenIndex; // ê¸°ë³¸ê°’ì„ ListenIndexë¡œ ì„¤ì •
 
-    // ÀÌ ÁÖ¸Ó´Ï(Sub-State Machine)·Î µé¾î¿Ã ¶§ È£ÃâµÊ
+    [Tooltip("í•´ë‹¹ ìƒíƒœì˜ ì• ë‹ˆë©”ì´ì…˜ ê°œìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.")]
+    public int maxCount = 3;
+
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
-        // 0ºÎÅÍ (°³¼ö-1) »çÀÌÀÇ ·£´ıÇÑ Á¤¼ö¸¦ »ÌÀ½ (¿¹: 0, 1, 2 Áß ÇÏ³ª)
+        if (maxCount <= 0) return; // ì• ë‹ˆë©”ì´ì…˜ ê°œìˆ˜ê°€ 0 ì´í•˜ë©´ ì‹¤í–‰í•˜ì§€ ì•ŠìŒ
+
         int randomIndex = Random.Range(0, maxCount);
 
-        // ¾Ö´Ï¸ŞÀÌÅÍÀÇ Int ÆÄ¶ó¹ÌÅÍ °ªÀ» ¹æ±İ »ÌÀº ·£´ı °ªÀ¸·Î ¼³Á¤
-        animator.SetInteger(parameterName, randomIndex);
-        Debug.Log($"{parameterName} °ªÀ» {randomIndex} (À¸)·Î ¼³Á¤!");
+        // --- ğŸ‘‡ ì„ íƒëœ enum ê°’ì„ ë¬¸ìì—´ë¡œ ë³€í™˜í•˜ì—¬ ì‚¬ìš©í•©ë‹ˆë‹¤ ---
+        string parameterNameString = parameter.ToString();
+
+        animator.SetInteger(parameterNameString, randomIndex);
+        Debug.Log($"{parameterNameString} ê°’ì„ {randomIndex} (ìœ¼)ë¡œ ì„¤ì •!");
     }
 }
